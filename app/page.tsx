@@ -51,7 +51,7 @@ export default function Page() {
             My Portfolio!
           </h1>
           <p className="text-neutral-700 dark:text-neutral-300">
-            The name is Jiro Madrid. I am a developer focused on clean interfaces, thoughtful user flows,
+            The name is <strong>Jiro Madrid</strong>. I am a developer focused on clean interfaces, thoughtful user flows,
             and maintainable software. This portfolio collects the projects,
             writing, and technical notes that best represent how I work.
           </p>
