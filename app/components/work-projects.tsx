@@ -122,6 +122,26 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                     >
                       {'>'}
                     </button>
+                    <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2">
+                      {project.previews.map((item, index) => (
+                        <button
+                          aria-label={`Show ${item.title}`}
+                          className={`h-2 rounded-full transition ${
+                            index === activeSlide
+                              ? 'w-6 bg-white'
+                              : 'w-2 bg-white/45 hover:bg-white/75'
+                          }`}
+                          key={item.title}
+                          onClick={() =>
+                            setActiveSlides((current) => ({
+                              ...current,
+                              [project.name]: index,
+                            }))
+                          }
+                          type="button"
+                        />
+                      ))}
+                    </div>
                   </div>
 
                   <div className="flex min-h-48 flex-col justify-between gap-4">
@@ -135,27 +155,6 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                     </div>
 
                     <div className="space-y-4">
-                      <div className="flex items-center gap-2">
-                        {project.previews.map((item, index) => (
-                          <button
-                            aria-label={`Show ${item.title}`}
-                            className={`h-2 rounded-full transition ${
-                              index === activeSlide
-                                ? 'w-6 bg-neutral-950 dark:bg-neutral-50'
-                                : 'w-2 bg-neutral-300 hover:bg-neutral-500 dark:bg-neutral-700 dark:hover:bg-neutral-500'
-                            }`}
-                            key={item.title}
-                            onClick={() =>
-                              setActiveSlides((current) => ({
-                                ...current,
-                                [project.name]: index,
-                              }))
-                            }
-                            type="button"
-                          />
-                        ))}
-                      </div>
-
                       <div className="flex flex-wrap items-center gap-2">
                         <a
                           className="rounded-md bg-neutral-950 px-4 py-2 text-sm text-white transition hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200"
