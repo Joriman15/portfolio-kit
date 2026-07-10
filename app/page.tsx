@@ -204,7 +204,7 @@ export default function Page() {
           ------------------------------------------------------------------------
         </p>
         <div className="space-y-4">
-          <h1 className="text-3xl font-semibold tracking-tighter text-neutral-950 dark:text-neutral-50">
+          <h1 className="text-2xl font-semibold tracking-tighter text-neutral-950 sm:text-3xl dark:text-neutral-50">
             Hello, welcome!
           </h1>
           <p className="text-neutral-700 dark:text-neutral-300">

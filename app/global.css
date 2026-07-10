@@ -30,7 +30,11 @@
 }
 
 html {
-  min-width: 360px;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-wrap: anywhere;
 }
 
 .prose .anchor {

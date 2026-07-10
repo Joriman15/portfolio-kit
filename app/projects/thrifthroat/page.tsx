@@ -33,7 +33,7 @@ export default function ThrifthroatPage() {
         <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
           E-commerce Project
         </p>
-        <h1 className="text-3xl font-semibold tracking-tighter text-neutral-950 dark:text-neutral-50">
+        <h1 className="text-2xl font-semibold tracking-tighter text-neutral-950 sm:text-3xl dark:text-neutral-50">
           Thrifthroat: Vintage Clothing Store
         </h1>
         <p className="text-neutral-700 dark:text-neutral-300">
@@ -61,7 +61,7 @@ export default function ThrifthroatPage() {
         </div>
         <div className="overflow-hidden rounded-lg border border-neutral-200 bg-white dark:border-neutral-800">
           <iframe
-            className="h-[70vh] min-h-[560px] w-full"
+            className="h-[65svh] min-h-96 w-full sm:h-[70vh] sm:min-h-[560px]"
             loading="lazy"
             src={liveUrl}
             title="Live preview of the Thrifthroat vintage clothing website"

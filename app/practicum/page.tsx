@@ -60,7 +60,7 @@ export default function PracticumPage() {
         <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
           Practicum Overview
         </p>
-        <h1 className="text-3xl font-semibold tracking-tighter text-neutral-950 dark:text-neutral-50">
+        <h1 className="text-2xl font-semibold tracking-tighter text-neutral-950 sm:text-3xl dark:text-neutral-50">
           Building a public-service system through real-world collaboration
         </h1>
         <p className="text-neutral-700 dark:text-neutral-300">
