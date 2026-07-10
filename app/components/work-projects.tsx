@@ -14,6 +14,7 @@ type Project = {
   description: string
   stack: string
   href: string
+  liveUrl?: string
   previews: ProjectPreview[]
 }
 
@@ -86,11 +87,16 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                 <div className="grid gap-4 pt-4 md:grid-cols-[1.4fr_0.8fr]">
                   <div className="relative overflow-hidden rounded-md border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950">
                     {preview.image ? (
-                      <img
-                        alt={`${project.name} - ${preview.title}`}
-                        className="aspect-video w-full object-cover"
-                        src={preview.image}
-                      />
+                      <div
+                        className="flex aspect-video items-center justify-center bg-neutral-100 dark:bg-neutral-900"
+                        style={{ background: preview.accent }}
+                      >
+                        <img
+                          alt={`${project.name} - ${preview.title}`}
+                          className="h-full w-full object-contain"
+                          src={preview.image}
+                        />
+                      </div>
                     ) : (
                       <div
                         className="flex aspect-video items-center justify-center px-6 text-center"
@@ -162,6 +168,16 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                         >
                           View project
                         </a>
+                        {project.liveUrl ? (
+                          <a
+                            className="rounded-md border border-neutral-300 px-4 py-2 text-sm transition hover:border-neutral-950 dark:border-neutral-700 dark:hover:border-neutral-200"
+                            href={project.liveUrl}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Live site ↗
+                          </a>
+                        ) : null}
                       </div>
                     </div>
                   </div>

@@ -11,20 +11,24 @@ const projects = [
     href: "/projects/project-one",
     previews: [
       {
-        title: "Guardian Dashboard",
+        title: "Gabai App Identity",
         description:
-          "Monitor your child's activity, manage screen time, block restricted applications, and receive real-time alerts through a secure parent dashboard.",
+          "The Gabai parental control app logo and visual identity.",
+        image: "/images/projects/gabai/logo.png",
         accent: "linear-gradient(135deg, #0f766e, #1d4ed8)",
       },
       {
-        title: "Child Device Interface",
+        title: "App Lock Screen",
         description:
-          "Displays the child's interface, enforces screen time restrictions, and securely applies parental controls in the background.",
+          "The child-device restriction screen shown when a parent has locked an application.",
+        image: "/images/projects/gabai/app-locked.jpg",
         accent: "linear-gradient(135deg, #164e63, #7c3aed)",
       },
       {
-        title: "Mobile Flow",
-        description: "A preview slot for the mobile setup and parent controls.",
+        title: "Parent Login",
+        description:
+          "The parent login screen, including secure account access and child-device QR scanning.",
+        image: "/images/projects/gabai/login-screen.jpg",
         accent: "linear-gradient(135deg, #15803d, #0f172a)",
       },
     ],
@@ -37,18 +41,24 @@ const projects = [
     href: "/practicum#output",
     previews: [
       {
-        title: "Applicant Records",
-        description: "Preview the records table and filtering workflow.",
+        title: "Student Records",
+        description:
+          "The student management page with search, filtering, status tracking, and record actions.",
+        image: "/images/projects/fap/students-page.png",
         accent: "linear-gradient(135deg, #1d4ed8, #475569)",
       },
       {
-        title: "Assistance Form",
-        description: "Show the data-entry flow for assistance applications.",
+        title: "Voucher Printing",
+        description:
+          "The bulk voucher selection and print-confirmation workflow for qualified students.",
+        image: "/images/projects/fap/printing-voucher.png",
         accent: "linear-gradient(135deg, #0369a1, #166534)",
       },
       {
-        title: "Report View",
-        description: "A carousel slot for generated summaries and reports.",
+        title: "Audit Logs",
+        description:
+          "The searchable audit trail used to review account activity and voucher record changes.",
+        image: "/images/projects/fap/audit-logs.png",
         accent: "linear-gradient(135deg, #334155, #9333ea)",
       },
     ],
@@ -56,25 +66,38 @@ const projects = [
   {
     name: "Thrifthroat: Vintage Clothing E-Commerce Website",
     description:
-      "Use this space for your strongest second project. Focus on the problem, your role, and the outcome.",
+      "A responsive vintage clothing storefront with product filtering, detailed item views, cart interactions, and customer FAQs.",
     stack: "React, HTML, CSS, Frontend, UI/UX Design",
-    href: "#",
+    href: "/projects/thrifthroat",
+    liveUrl: "https://thrifthroat-react-eight.vercel.app",
     previews: [
       {
-        title: "Shop Catalog",
-        description: "Preview the product grid and browsing experience.",
+        title: "Mobile Landing Page",
+        description:
+          "A responsive mobile introduction to the store's curated vintage collection.",
+        image: "/images/projects/thrifthroat/mobile-home.png",
         accent: "linear-gradient(135deg, #be123c, #0f766e)",
+      },
+      {
+        title: "Shop Catalog",
+        description:
+          "The desktop product grid includes sorting, category filters, pricing, and add-to-cart actions.",
+        image: "/images/projects/thrifthroat/catalog.png",
+        accent: "linear-gradient(135deg, #7c2d12, #2563eb)",
       },
       {
         title: "Product Details",
         description:
-          "Highlight an individual clothing item and purchase details.",
-        accent: "linear-gradient(135deg, #7c2d12, #2563eb)",
+          "A focused product modal presents additional photos, price, brand, measurements, and size.",
+        image: "/images/projects/thrifthroat/product-details.png",
+        accent: "linear-gradient(135deg, #4d7c0f, #4338ca)",
       },
       {
-        title: "Checkout Flow",
-        description: "A preview slot for cart and checkout interactions.",
-        accent: "linear-gradient(135deg, #4d7c0f, #4338ca)",
+        title: "Customer FAQs",
+        description:
+          "Expandable answers help customers understand ordering, shipping, refunds, and store policies.",
+        image: "/images/projects/thrifthroat/faqs.png",
+        accent: "linear-gradient(135deg, #292524, #78716c)",
       },
     ],
   },

@@ -19,16 +19,22 @@ const outputs = [
     title: "Applicant Records",
     description:
       "A centralized records module for viewing, searching, filtering, and maintaining student information used during assistance processing.",
+    image: "/images/projects/fap/students-page.png",
+    alt: "Financial Assistance Program student records page",
   },
   {
     title: "Voucher Processing",
     description:
       "A guided workflow for preparing and managing financial assistance vouchers while reducing repetitive manual encoding.",
+    image: "/images/projects/fap/printing-voucher.png",
+    alt: "Financial Assistance Program bulk voucher printing confirmation",
   },
   {
     title: "Reports and Audit Logs",
     description:
       "Reporting and activity-tracking features that improve accountability and help authorized personnel review system transactions.",
+    image: "/images/projects/fap/audit-logs.png",
+    alt: "Financial Assistance Program audit logs page",
   },
 ];
 
@@ -166,20 +172,17 @@ export default function PracticumPage() {
         </div>
 
         <div className="space-y-5">
-          {outputs.map((output, index) => (
+          {outputs.map((output) => (
             <article
               className="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800"
               key={output.title}
             >
-              <div className="flex aspect-video items-center justify-center bg-neutral-100 px-6 text-center dark:bg-neutral-900">
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-400">
-                    Screenshot {index + 1}
-                  </p>
-                  <p className="mt-2 font-medium text-neutral-700 dark:text-neutral-300">
-                    Add your {output.title.toLowerCase()} screenshot here
-                  </p>
-                </div>
+              <div className="flex aspect-video items-center justify-center bg-neutral-100 dark:bg-neutral-900">
+                <img
+                  alt={output.alt}
+                  className="h-full w-full object-contain"
+                  src={output.image}
+                />
               </div>
               <div className="space-y-2 p-5">
                 <h3 className="font-medium">{output.title}</h3>
