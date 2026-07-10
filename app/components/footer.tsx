@@ -24,18 +24,7 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="/rss"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/your-username"
+            href="https://github.com/Joriman15"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">github</p>
@@ -46,7 +35,7 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://www.linkedin.com/in/your-username"
+            href="https://www.linkedin.com/in/jiro-madrid-51358b345"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">linkedin</p>
@@ -54,7 +43,7 @@ export default function Footer() {
         </li>
       </ul>
       <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        (c) {new Date().getFullYear()} Your Name
+        © {new Date().getFullYear()} Jiro Madrid
       </p>
     </footer>
   )

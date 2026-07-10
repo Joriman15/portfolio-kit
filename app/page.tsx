@@ -34,7 +34,7 @@ const projects = [
     description:
       "A web-based voucher management system developed for the City Government of Biñan to digitize student records and automate financial assistance processing.",
     stack: "CodeIgniter4, PHP, XAMPP, MySQL, Photoshop, HTML, CSS, Bootstrap",
-    href: "#",
+    href: "/practicum#output",
     previews: [
       {
         title: "Applicant Records",
@@ -134,48 +134,55 @@ const certificates = [
     issuer: "Cisco Networking Academy",
     date: "June 2024",
     href: "https://www.credly.com/badges/03928af6-e392-4712-b656-7843455473f9/public_url",
-    image: "",
+    image: "/images/credentials/ethical-hacker.png",
   },
   {
     name: "CCNA: Introduction to Networks",
     issuer: "Cisco Networking Academy",
     date: "April 2024",
     href: "https://www.credly.com/badges/00b8f575-6727-48b0-8cfe-79ea1f95dcbd/public_url",
-    image: "",
+    image: "/images/credentials/ccna-introduction.png",
   },
   {
     name: "CCNA: Switching, Routing, and Wireless Essentials",
     issuer: "Cisco Networking Academy",
     date: "November 2024",
     href: "https://www.credly.com/badges/452a2b81-daa5-4c2a-81f4-d413e0912986/public_url",
-    image: "",
+    image: "/images/credentials/ccna-srwe.png",
   },
   {
     name: "CompTIA IT Fundamentals+ (ITF+) Certification",
     issuer: "CompTIA",
     date: "July 2024",
     href: "https://www.credly.com/badges/1c390039-098a-4c53-b641-a26bffe0de36/public_url",
-    image: "",
+    image: "/images/credentials/comptia-itf-plus.png",
   },
   {
     name: "AWS Academy Graduate - Cloud Foundations - Training Badge",
     issuer: "AWS",
     date: "November 2023",
     href: "https://www.credly.com/badges/7820ef68-18da-4cef-a495-1004e9381778/public_url",
-    image: "",
+    image: "/images/credentials/aws-cloud-foundations.png",
   },
+];
+
+const googleCloudBadges = [
+  "Build a Secure Google Cloud Network Skill Badge",
+  "Implement Load Balancing on Compute Engine Skill Badge",
+  "Prepare Data for ML APIs on Google Cloud Skill Badge",
+  "Set Up an App Dev Environment on Google Cloud Skill Badge",
 ];
 
 export default function Page() {
   return (
     <section className="space-y-14">
-      <section className="space-y-5">
+      <section id="home" className="space-y-5">
         <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
           ------------------------------------------------------------------------
         </p>
         <div className="space-y-4">
           <h1 className="text-3xl font-semibold tracking-tighter text-neutral-950 dark:text-neutral-50">
-            Hedow, Welcome!
+            Hello, welcome!
           </h1>
           <p className="text-neutral-700 dark:text-neutral-300">
             The name is <strong>Jiro Madrid</strong>. I am a developer focused
@@ -201,16 +208,17 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="space-y-4">
+      <section id="about" className="scroll-mt-8 space-y-4">
         <h2 className="text-xl font-semibold tracking-tight">About Me</h2>
         <p className="text-neutral-700 dark:text-neutral-300">
-          Write two or three sentences about the kind of work you want more of:
-          frontend, full-stack, design systems, backend tools, data dashboards,
-          client sites, or whatever direction fits you. Keep it specific and
-          honest.
+          I am an Information Technology student and developer who enjoys
+          turning practical problems into clear, reliable digital solutions.
+          My interests span full-stack web development, mobile applications,
+          cybersecurity, and user-centered interface design.
         </p>
       </section>
 
+      <section id="credentials" className="scroll-mt-8">
       <FadeIn className="space-y-5" delay={0.1}>
         <div className="space-y-3">
           <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
@@ -225,94 +233,67 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="divide-y divide-neutral-200 border-y border-neutral-200 dark:divide-neutral-800 dark:border-neutral-800">
           {certificates.map((certificate) => (
             <article
-              className="rounded-md border border-neutral-200 p-4 dark:border-neutral-800"
+              className="flex items-center gap-4 py-4"
               key={`${certificate.name}-${certificate.issuer}`}
             >
               {certificate.image ? (
                 <img
-                  alt={`${certificate.name} certificate`}
-                  className="mb-4 aspect-video w-full rounded-sm object-cover"
+                  alt={`${certificate.name} badge`}
+                  className="h-16 w-16 shrink-0 object-contain sm:h-20 sm:w-20"
                   src={certificate.image}
                 />
               ) : (
-                <div className="mb-4 flex aspect-video items-center justify-center rounded-sm bg-neutral-100 text-sm font-medium text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
-                  Certificate image
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-sm bg-neutral-100 text-xs text-neutral-500 sm:h-20 sm:w-20 dark:bg-neutral-900 dark:text-neutral-400">
+                  Badge
                 </div>
               )}
-              <div className="space-y-2">
-                <div>
-                  <h3 className="font-medium text-neutral-950 dark:text-neutral-50">
+              <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between sm:gap-4">
+                <div className="min-w-0">
+                  <h3 className="font-medium leading-snug text-neutral-950 dark:text-neutral-50">
                     {certificate.name}
                   </h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    {certificate.issuer} - {certificate.date}
+                  <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                    {certificate.issuer} · {certificate.date}
                   </p>
                 </div>
                 <a
-                  className="inline-flex text-sm font-medium text-neutral-950 underline underline-offset-4 transition hover:text-neutral-600 dark:text-neutral-50 dark:hover:text-neutral-300"
+                  className="mt-2 inline-flex shrink-0 text-sm font-medium text-neutral-950 underline underline-offset-4 transition hover:text-neutral-600 sm:mt-0 dark:text-neutral-50 dark:hover:text-neutral-300"
                   href={certificate.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
-                  View credential
+                  View ↗
                 </a>
               </div>
             </article>
           ))}
         </div>
-      </FadeIn>
 
-      <section className="space-y-5">
-        <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
-          Practicum
-        </p>
-        <h2 className="text-xl font-semibold tracking-tight">
-          Practicum Experience
-        </h2>
-        <p className="text-neutral-700 dark:text-neutral-300">
-          I completed my practicum at the City Government of Biñan, where I
-          contributed to several projects, mainly the development of a web-based Voucher Management
-          System for the Financial Assistance Program.
-        </p>
-        <p className="text-neutral-700 dark:text-neutral-300">
-          My work involved full-stack web development using CodeIgniter 4, PHP,
-          MySQL, JavaScript, jQuery, AJAX, and Bootstrap, including database
-          design, student record management, voucher generation, Excel import
-          functionality, audit logging, and system testing. Through this
-          experience, I strengthened my technical,
-          problem-solving, and collaborative skills in a real-world government
-          setting.
-        </p>
-        <div className="grid gap-3 text-sm sm:grid-cols-3">
-          <div className="rounded-md border border-neutral-200 p-3 dark:border-neutral-800">
-            <p className="font-medium text-neutral-950 dark:text-neutral-50">
-              Company
-            </p>
-            <p className="mt-1 text-neutral-600 dark:text-neutral-400">
-              City Government of Binan
+        <div className="pt-2">
+          <div className="space-y-1">
+            <h3 className="font-medium text-neutral-950 dark:text-neutral-50">
+              Google Cloud Skill Badges
+            </h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              Additional hands-on cloud learning milestones
             </p>
           </div>
-          <div className="rounded-md border border-neutral-200 p-3 dark:border-neutral-800">
-            <p className="font-medium text-neutral-950 dark:text-neutral-50">
-              Focus
-            </p>
-            <p className="mt-1 text-neutral-600 dark:text-neutral-400">
-              Full-stack web development
-            </p>
-          </div>
-          <div className="rounded-md border border-neutral-200 p-3 dark:border-neutral-800">
-            <p className="font-medium text-neutral-950 dark:text-neutral-50">
-              Hours
-            </p>
-            <p className="mt-1 text-neutral-600 dark:text-neutral-400">
-              486 rendered hours
-            </p>
-          </div>
+          <ul className="mt-3 grid gap-x-6 gap-y-2 text-sm text-neutral-700 sm:grid-cols-2 dark:text-neutral-300">
+            {googleCloudBadges.map((badge) => (
+              <li className="flex gap-2" key={badge}>
+                <span aria-hidden="true" className="text-neutral-400">—</span>
+                <span>{badge}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+      </FadeIn>
       </section>
 
-      <section id="projects" className="space-y-4">
+      <section id="projects" className="scroll-mt-8 space-y-4">
         <h2 className="text-xl font-semibold tracking-tight">Selected Work</h2>
         <WorkProjects projects={projects} />
       </section>
