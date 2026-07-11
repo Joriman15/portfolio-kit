@@ -47,13 +47,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cx(
-        "text-black bg-white dark:text-white dark:bg-black",
+        "text-neutral-950 bg-[#f8faff] dark:text-white dark:bg-[#070b16]",
         GeistSans.variable,
         GeistMono.variable,
       )}
     >
-      <body className="mx-auto mt-5 w-full max-w-xl px-4 antialiased sm:mt-8 sm:px-6 lg:px-0">
+      <body className="mx-auto mt-5 w-full max-w-3xl px-4 antialiased sm:mt-8 sm:px-6 lg:px-0">
         <ScrollIndicator />
         <main className="mt-4 flex min-w-0 flex-auto flex-col sm:mt-6">
           <Navbar />

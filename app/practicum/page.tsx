@@ -55,15 +55,16 @@ const viewingPhotos = [
 
 export default function PracticumPage() {
   return (
-    <article className="space-y-16">
-      <header className="space-y-4">
-        <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
+    <article className="space-y-20">
+      <header className="relative isolate overflow-hidden rounded-[2rem] border border-white/80 bg-gradient-to-br from-indigo-600 via-violet-600 to-cyan-500 p-7 text-white shadow-2xl shadow-indigo-200 sm:p-10 dark:border-white/10 dark:shadow-indigo-950/40">
+        <div className="absolute -right-12 -top-12 -z-10 h-48 w-48 rounded-full border-[28px] border-white/10" />
+        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-100">
           Practicum Overview
         </p>
-        <h1 className="text-2xl font-semibold tracking-tighter text-neutral-950 sm:text-3xl dark:text-neutral-50">
+        <h1 className="mt-4 text-3xl font-semibold tracking-tighter sm:text-5xl">
           Building a public-service system through real-world collaboration
         </h1>
-        <p className="text-neutral-700 dark:text-neutral-300">
+        <p className="mt-5 max-w-2xl text-indigo-50">
           My practicum at the City Government of Biñan gave me the opportunity
           to apply full-stack development skills to an operational government
           workflow. The main output was a web-based Financial Assistance Program
@@ -95,7 +96,7 @@ export default function PracticumPage() {
             ["Hours rendered", "486 hours"],
           ].map(([label, value]) => (
             <div
-              className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-800"
+              className="rounded-2xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50 p-5 shadow-md shadow-indigo-100/40 dark:border-indigo-500/20 dark:from-indigo-950/30 dark:to-cyan-950/20 dark:shadow-none"
               key={label}
             >
               <p className="text-neutral-500 dark:text-neutral-400">{label}</p>
@@ -136,7 +137,7 @@ export default function PracticumPage() {
               >
                 <img
                   alt={photo.alt}
-                  className={`w-full rounded-lg border border-neutral-200 object-cover dark:border-neutral-800 ${
+                  className={`w-full rounded-lg border border-neutral-200 object-cover transition duration-500 ease-out hover:-translate-y-1 hover:shadow-xl dark:border-neutral-800 ${
                     index === 2 ? "aspect-[16/10]" : "aspect-[4/5]"
                   }`}
                   src={photo.src}
@@ -149,7 +150,7 @@ export default function PracticumPage() {
 
       <section id="output" className="scroll-mt-8 space-y-6">
         <div className="space-y-3">
-          <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600 dark:text-indigo-400">
             02 — Presentation of Output
           </p>
           <h2 className="text-2xl font-semibold tracking-tight">
@@ -174,13 +175,13 @@ export default function PracticumPage() {
         <div className="space-y-5">
           {outputs.map((output) => (
             <article
-              className="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800"
+              className="overflow-hidden rounded-2xl border border-indigo-100 bg-white/80 shadow-xl shadow-indigo-100/40 dark:border-white/10 dark:bg-white/[0.03] dark:shadow-none"
               key={output.title}
             >
               <div className="flex aspect-video items-center justify-center bg-neutral-100 dark:bg-neutral-900">
                 <img
                   alt={output.alt}
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-contain transition-transform duration-500 ease-out hover:scale-[1.02]"
                   src={output.image}
                 />
               </div>
@@ -197,7 +198,7 @@ export default function PracticumPage() {
 
       <section id="synthesis" className="scroll-mt-8 space-y-5">
         <div className="space-y-3">
-          <p className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-violet-600 dark:text-violet-400">
             03 — Synthesis
           </p>
           <h2 className="text-2xl font-semibold tracking-tight">

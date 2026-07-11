@@ -45,20 +45,51 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {projects.map((project) => {
         const isOpen = openProject === project.name
         const activeSlide = activeSlides[project.name] ?? 0
         const preview = project.previews[activeSlide]
 
+        if (project.previews.length === 0) {
+          return (
+            <article
+              className="group min-w-0 overflow-hidden rounded-2xl border border-indigo-100 bg-white/80 p-4 shadow-lg shadow-indigo-100/30 backdrop-blur transition hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-100/60 sm:p-5 dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none dark:hover:border-indigo-500/50"
+              key={project.name}
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div className="min-w-0">
+                  <h3 className="font-medium text-neutral-950 dark:text-neutral-50">
+                    {project.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-neutral-700 dark:text-neutral-300">
+                    {project.description}
+                  </p>
+                  <p className="mt-3 break-words text-xs font-medium uppercase tracking-[0.1em] text-cyan-700 sm:tracking-[0.12em] dark:text-cyan-400">
+                    {project.stack}
+                  </p>
+                </div>
+                <a
+                  className="inline-flex shrink-0 self-start rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2 text-sm font-medium text-white shadow-md shadow-indigo-500/20 transition hover:-translate-y-0.5 sm:self-auto"
+                  href={project.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  View repository ↗
+                </a>
+              </div>
+            </article>
+          )
+        }
+
         return (
           <article
-            className="min-w-0 rounded-lg border border-neutral-200 transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+            className="group min-w-0 overflow-hidden rounded-2xl border border-indigo-100 bg-white/80 shadow-lg shadow-indigo-100/30 backdrop-blur transition hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-100/60 dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none dark:hover:border-indigo-500/50"
             key={project.name}
           >
             <button
               aria-expanded={isOpen}
-              className="w-full min-w-0 p-3 text-left sm:p-4"
+              className="relative w-full min-w-0 p-4 text-left sm:p-5"
               onClick={() => toggleProject(project.name)}
               type="button"
             >
@@ -72,18 +103,18 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                       {project.description}
                     </p>
                   </div>
-                  <span className="mt-1 shrink-0 text-lg leading-none text-neutral-500 dark:text-neutral-400">
+                  <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-lg leading-none text-indigo-600 transition group-hover:bg-indigo-600 group-hover:text-white dark:bg-indigo-500/10 dark:text-indigo-300">
                     {isOpen ? '-' : '+'}
                   </span>
                 </div>
-                <p className="break-words text-xs uppercase tracking-[0.1em] text-neutral-500 sm:tracking-[0.12em] dark:text-neutral-400">
+                <p className="break-words text-xs font-medium uppercase tracking-[0.1em] text-cyan-700 sm:tracking-[0.12em] dark:text-cyan-400">
                   {project.stack}
                 </p>
               </div>
             </button>
 
             {isOpen ? (
-              <div className="border-t border-neutral-200 p-3 pt-0 sm:p-4 sm:pt-0 dark:border-neutral-800">
+              <div className="border-t border-indigo-100 p-3 pt-0 sm:p-5 sm:pt-0 dark:border-white/10">
                 <div className="grid gap-4 pt-4 md:grid-cols-[1.4fr_0.8fr]">
                   <div className="relative overflow-hidden rounded-md border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950">
                     {preview.image ? (
@@ -93,7 +124,7 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                       >
                         <img
                           alt={`${project.name} - ${preview.title}`}
-                          className="h-full w-full object-contain"
+                          className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                           src={preview.image}
                         />
                       </div>
@@ -163,14 +194,14 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                     <div className="space-y-4">
                       <div className="flex flex-wrap items-center gap-2">
                         <a
-                          className="rounded-md bg-neutral-950 px-4 py-2 text-sm text-white transition hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200"
+                          className="rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2 text-sm font-medium text-white shadow-md shadow-indigo-500/20 transition hover:-translate-y-0.5"
                           href={project.href}
                         >
                           View project
                         </a>
                         {project.liveUrl ? (
                           <a
-                            className="rounded-md border border-neutral-300 px-4 py-2 text-sm transition hover:border-neutral-950 dark:border-neutral-700 dark:hover:border-neutral-200"
+                            className="rounded-full border border-cyan-300 px-4 py-2 text-sm font-medium text-cyan-700 transition hover:bg-cyan-50 dark:border-cyan-700 dark:text-cyan-300 dark:hover:bg-cyan-950/30"
                             href={project.liveUrl}
                             rel="noopener noreferrer"
                             target="_blank"
