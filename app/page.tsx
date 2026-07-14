@@ -214,6 +214,25 @@ const certificates = [
   },
 ];
 
+const certificateDocuments = [
+  {
+    name: "CyberSocPH Certificate",
+    href: "/certificates/cybersocph-certificate.pdf",
+  },
+  {
+    name: "BTB Certificate of Attendance",
+    href: "/certificates/btb-certificate-of-attendance.pdf",
+  },
+  {
+    name: "Certificate of Participation",
+    href: "/certificates/lorenz-jiro-madrid-certificate.pdf",
+  },
+  {
+    name: "HitC Certificate of Attendance",
+    href: "/certificates/hitc-certificate-of-attendance.pdf",
+  },
+];
+
 const googleCloudBadges = [
   "Build a Secure Google Cloud Network Skill Badge",
   "Implement Load Balancing on Compute Engine Skill Badge",
@@ -324,6 +343,45 @@ export default function Page() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="pt-3">
+          <div className="space-y-1">
+            <h3 className="font-medium text-neutral-950 dark:text-neutral-50">
+              Certificate Documents
+            </h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              View the certificates directly below or open the full PDF.
+            </p>
+          </div>
+          <div className="mt-4 grid gap-5 sm:grid-cols-2">
+            {certificateDocuments.map((certificate) => (
+              <article
+                className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-950"
+                key={certificate.href}
+              >
+                <iframe
+                  className="aspect-[4/3] w-full bg-neutral-100 dark:bg-neutral-900"
+                  loading="lazy"
+                  src={`${certificate.href}#page=1&toolbar=0&navpanes=0`}
+                  title={`${certificate.name} preview`}
+                />
+                <div className="flex items-center justify-between gap-4 p-4">
+                  <h4 className="font-medium leading-snug text-neutral-950 dark:text-neutral-50">
+                    {certificate.name}
+                  </h4>
+                  <a
+                    className="shrink-0 text-sm font-medium text-indigo-600 underline underline-offset-4 transition hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300"
+                    href={certificate.href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Open PDF ↗
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="pt-2">
