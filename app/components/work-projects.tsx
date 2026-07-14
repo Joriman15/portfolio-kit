@@ -45,7 +45,7 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
   }
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-3 sm:space-y-5">
       {projects.map((project) => {
         const isOpen = openProject === project.name
         const activeSlide = activeSlides[project.name] ?? 0
@@ -94,16 +94,16 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
               type="button"
             >
               <div className="flex flex-col gap-2">
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-3 sm:gap-4">
                   <div className="min-w-0">
-                    <h3 className="font-medium text-neutral-950 dark:text-neutral-50">
+                    <h3 className="pr-1 font-medium leading-snug text-neutral-950 dark:text-neutral-50">
                       {project.name}
                     </h3>
-                    <p className="mt-1 text-sm text-neutral-700 dark:text-neutral-300">
+                    <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
                       {project.description}
                     </p>
                   </div>
-                  <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-lg leading-none text-indigo-600 transition group-hover:bg-indigo-600 group-hover:text-white dark:bg-indigo-500/10 dark:text-indigo-300">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-lg leading-none text-indigo-600 transition group-hover:bg-indigo-600 group-hover:text-white sm:mt-1 dark:bg-indigo-500/10 dark:text-indigo-300">
                     {isOpen ? '-' : '+'}
                   </span>
                 </div>
@@ -114,7 +114,7 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
             </button>
 
             {isOpen ? (
-              <div className="border-t border-indigo-100 p-3 pt-0 sm:p-5 sm:pt-0 dark:border-white/10">
+              <div className="border-t border-indigo-100 p-4 pt-0 sm:p-5 sm:pt-0 dark:border-white/10">
                 <div className="grid gap-4 pt-4 md:grid-cols-[1.4fr_0.8fr]">
                   <div className="relative overflow-hidden rounded-md border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950">
                     {preview.image ? (
@@ -145,7 +145,7 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                     )}
                     <button
                       aria-label="Previous preview"
-                      className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-xl leading-none text-neutral-950 shadow-sm transition hover:bg-white sm:left-3 dark:bg-neutral-950/90 dark:text-neutral-50 dark:hover:bg-neutral-900"
+                      className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg leading-none text-neutral-950 shadow-sm transition hover:bg-white sm:left-3 sm:h-10 sm:w-10 sm:text-xl dark:bg-neutral-950/90 dark:text-neutral-50 dark:hover:bg-neutral-900"
                       onClick={() => moveSlide(project, -1)}
                       type="button"
                     >
@@ -153,7 +153,7 @@ export function WorkProjects({ projects }: WorkProjectsProps) {
                     </button>
                     <button
                       aria-label="Next preview"
-                      className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-xl leading-none text-neutral-950 shadow-sm transition hover:bg-white sm:right-3 dark:bg-neutral-950/90 dark:text-neutral-50 dark:hover:bg-neutral-900"
+                      className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg leading-none text-neutral-950 shadow-sm transition hover:bg-white sm:right-3 sm:h-10 sm:w-10 sm:text-xl dark:bg-neutral-950/90 dark:text-neutral-50 dark:hover:bg-neutral-900"
                       onClick={() => moveSlide(project, 1)}
                       type="button"
                     >

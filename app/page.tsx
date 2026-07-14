@@ -223,26 +223,26 @@ const googleCloudBadges = [
 
 export default function Page() {
   return (
-    <section className="space-y-20">
-      <FadeIn id="home" className="relative isolate overflow-hidden rounded-[2rem] border border-white/80 bg-white/75 p-6 shadow-2xl shadow-indigo-100/70 backdrop-blur sm:p-10 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-indigo-950/30">
+    <section className="space-y-14 sm:space-y-20">
+      <FadeIn id="home" className="relative isolate overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-5 shadow-2xl shadow-indigo-100/70 backdrop-blur sm:rounded-[2rem] sm:p-10 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-indigo-950/30">
         <div className="float-slow absolute -right-16 -top-16 -z-10 h-52 w-52 rounded-full bg-gradient-to-br from-indigo-400/40 to-cyan-300/30 blur-2xl" />
         <div className="absolute -bottom-24 -left-16 -z-10 h-48 w-48 rounded-full bg-gradient-to-tr from-violet-400/25 to-fuchsia-300/20 blur-2xl" />
-        <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-indigo-700 dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300">
+        <p className="mb-5 grid max-w-full grid-cols-[auto_1fr] items-center gap-2 rounded-2xl border border-indigo-200 bg-indigo-50 px-3 py-2 text-[0.68rem] font-semibold uppercase leading-relaxed tracking-[0.11em] text-indigo-700 sm:inline-grid sm:rounded-full sm:py-1 sm:text-xs sm:tracking-[0.14em] dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300">
           <span className="h-2 w-2 rounded-full bg-cyan-500" />
           Developer · Designer · Cybersecurity · Problem solver
         </p>
         <div className="space-y-4">
-          <h1 className="text-4xl font-semibold tracking-[-0.05em] text-neutral-950 sm:text-6xl dark:text-neutral-50">
+          <h1 className="text-3xl font-semibold tracking-[-0.05em] text-neutral-950 min-[380px]:text-4xl sm:text-6xl dark:text-neutral-50">
             Hello, I&apos;m <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent">Jiro.</span>
           </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+          <p className="max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg dark:text-neutral-300">
             I am a developer focused
             on clean interfaces, thoughtful user flows, and maintainable
             software. This portfolio collects the projects, writing, and
             technical notes that best represent how I work.
           </p>
         </div>
-        <div className="mt-7 flex flex-wrap gap-3 text-sm">
+        <div className="mt-6 flex flex-wrap gap-3 text-sm sm:mt-7">
           <a
             className="rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-2.5 font-medium text-white shadow-lg shadow-indigo-500/20 transition hover:-translate-y-0.5 hover:shadow-indigo-500/30"
             href="/resume.pdf"
@@ -264,7 +264,7 @@ export default function Page() {
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600 dark:text-indigo-400">A little context</p>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight">About Me</h2>
         </div>
-        <p className="text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+        <p className="text-base leading-relaxed text-neutral-600 sm:text-lg dark:text-neutral-300">
           I am an Information Technology student and developer who enjoys
           turning practical problems into clear, reliable digital solutions.
           My interests span full-stack web development, mobile applications,
@@ -350,7 +350,7 @@ export default function Page() {
       <FadeIn id="projects" className="scroll-mt-8 space-y-6" delay={0.05}>
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-600 dark:text-cyan-400">Projects</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight">Selected Work</h2>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">Selected Work</h2>
         </div>
         <WorkProjects projects={projects} />
       </FadeIn>

@@ -70,6 +70,13 @@ export default function PracticumPage() {
           workflow. The main output was a web-based Financial Assistance Program
           and voucher management system.
         </p>
+        <a
+          className="mt-7 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-medium text-indigo-700 shadow-lg shadow-indigo-950/20 transition hover:-translate-y-0.5 hover:shadow-indigo-950/30"
+          href="/final-report-document.pdf"
+          download
+        >
+          Download Final Report
+        </a>
       </header>
 
       <section id="experience" className="scroll-mt-8 space-y-6">
